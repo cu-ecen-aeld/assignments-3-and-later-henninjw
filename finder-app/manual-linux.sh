@@ -39,7 +39,6 @@ if [ ! -e ${OUTDIR}/linux-stable/arch/${ARCH}/boot/Image ]; then
     make ARCH=${ARCH} CROSS_COMPILE=${CROSS_COMPILE} defconfig
     make -j2 ARCH=${ARCH} CROSS_COMPILE=${CROSS_COMPILE} all
     make -j2 ARCH=${ARCH} CROSS_COMPILE=${CROSS_COMPILE} Image
-    make ARCH=${ARCH} CROSS_COMPILE=${CROSS_COMPILE} modules
     make ARCH=${ARCH} CROSS_COMPILE=${CROSS_COMPILE} dtbs
 fi
 

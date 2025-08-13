@@ -16,10 +16,11 @@ SRCS = writer.c
 # Object files (derived from source files)
 OBJS = $(SRCS:.c=.o)
 
+default:
+	$(CC) $(CFLAGS) $(INCLUDES) writer.c -o writer $(LDFLAGS)
+
 # Default target
-all: writer.c
-	gcc writer.c -o writer
-	aarch64-none-linux-gnu-gcc writer.c -o writer
+all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CC) -o $@ $^
@@ -29,3 +30,8 @@ $(TARGET): $(OBJS)
 
 clean:
 	rm -f $(TARGET) $(OBJS)
+
+
+# all: writer.c
+# 	gcc writer.c -o writer
+# 	aarch64-none-linux-gnu-gcc writer.c -o writer

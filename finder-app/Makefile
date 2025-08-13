@@ -17,7 +17,9 @@ SRCS = writer.c
 OBJS = $(SRCS:.c=.o)
 
 # Default target
-all: $(TARGET)
+all: writer.c
+	gcc writer.c -o writer
+	aarch64-none-linux-gnu-gcc writer.c -o writer
 
 $(TARGET): $(OBJS)
 	$(CC) -o $@ $^
